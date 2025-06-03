@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Percabangan jadwal perkuliahan berdasarkan hari
+        // Variabel hariKuliah berisi nama hari (misal: 'Senin', 'Sabtu', dll)
+        const hariKuliah = prompt('Masukkan nama hari');
+        let pesan = '';
+
+        // Percabangan untuk menentukan status perkuliahan
+        // Senin sampai Jumat adalah hari kuliah
+        // Sabtu dan Minggu adalah hari libur
+        let table = '<table border="1" style="border-color:blue;margin:auto;text-align:center;">' +
+                '<tr style="background-color:#0074D9;color:white;"><th>Hari</th><th>Status</th></tr>';
+        if (hariKuliah === 'Senin') {
+            table += '<tr style="background-color:#E3F2FD;"><td>Senin</td><td>Hari Senin adalah hari kuliah.<br>Selamat belajar!</td></tr>';
+        } 
+        else if (hariKuliah === 'Selasa') {
+            table += '<tr style="background-color:#BBDEFB;"><td>Selasa</td><td>Hari Selasa adalah hari kuliah.<br>Selamat belajar!</td></tr>';
+        } 
+        else if (hariKuliah === 'Rabu') {
+            table += '<tr style="background-color:#B2DFDB;"><td>Rabu</td><td>Hari Rabu adalah hari kuliah.<br>Selamat belajar!</td></tr>';
+        } 
+        else if (hariKuliah === 'Kamis') {
+            table += '<tr style="background-color:#FFF9C4;"><td>Kamis</td><td>Hari Kamis adalah hari kuliah.<br>Selamat belajar!</td></tr>';
+        } 
+        else if (hariKuliah === 'Jumat') {
+            table += '<tr style="background-color:#FFE0B2;"><td>Jumat</td><td>Hari Jumat adalah hari kuliah.<br>Selamat belajar!</td></tr>';
+        }
+        else if (hariKuliah === 'Semua-' ){
+
+        }
+        else if (hariKuliah === 'Sabtu' ) {
+            table += '<tr style="background-color:#FFCDD2;"><td>Sabtu</td><td>Hari Sabtu adalah hari libur.<br>Nikmati waktu istirahat!</td></tr>';
+        } 
+        else if (hariKuliah === 'Minggu' ) {
+            table += '<tr style="background-color:#F8BBD0;"><td>Minggu</td><td>Hari Minggu adalah hari libur.<br>Nikmati waktu istirahat!</td></tr>';
+        } else {
+            table += '<tr style="background-color:#F5F5F5;"><td colspan="2">Nama hari yang dimasukkan tidak valid.</td></tr>';
+        }
+        table += '</table>';
+        pesan = table;
+
+        // Menampilkan hasil percabangan ke halaman web saat halaman dimuat
+        window.onload = function() {
+            document.body.innerHTML += '<p>' + pesan + '</p>';
+        };
+        window.onload = function() {
+            document.body.innerHTML += '<p>' + pesan + '</p>';
+            const btn = document.createElement('button');
+            btn.textContent = 'Semua Jadwal';
+            btn.style.display = 'block';
+            btn.style.margin = '20px auto';
+            btn.onclick = function() {
+                const allTable = '<table border="1" style="border-color:blue;margin:auto;text-align:center;">' +
+                    '<tr style="background-color:#0074D9;color:white;"><th>Hari</th><th>Status</th></tr>' +
+                    '<tr style="background-color:#E3F2FD;"><td>Senin</td><td>Hari Senin adalah hari kuliah.<br>Selamat belajar!</td></tr>' +
+                    '<tr style="background-color:#BBDEFB;"><td>Selasa</td><td>Hari Selasa adalah hari kuliah.<br>Selamat belajar!</td></tr>' +
+                    '<tr style="background-color:#B2DFDB;"><td>Rabu</td><td>Hari Rabu adalah hari kuliah.<br>Selamat belajar!</td></tr>' +
+                    '<tr style="background-color:#FFF9C4;"><td>Kamis</td><td>Hari Kamis adalah hari kuliah.<br>Selamat belajar!</td></tr>' +
+                    '<tr style="background-color:#FFE0B2;"><td>Jumat</td><td>Hari Jumat adalah hari kuliah.<br>Selamat belajar!</td></tr>' +
+                    '<tr style="background-color:#FFCDD2;"><td>Sabtu</td><td>Hari Sabtu adalah hari libur.<br>Nikmati waktu istirahat!</td></tr>' +
+                    '<tr style="background-color:#F8BBD0;"><td>Minggu</td><td>Hari Minggu adalah hari libur.<br>Nikmati waktu istirahat!</td></tr>' +
+                    '</table>';
+                document.body.innerHTML += '<p>' + allTable + '</p>';
+            };
+            document.body.appendChild(btn);
+        };
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
